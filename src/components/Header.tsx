@@ -8,8 +8,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import { BetweenVerticalStartIcon, FolderKanbanIcon, Github, GithubIcon, HomeIcon, Icon, LinkedinIcon, MailIcon, MoonIcon, Newspaper, SunIcon, TelescopeIcon, TwitterIcon, UtensilsCrossedIcon } from "lucide-react";
-import { nav } from "motion/react-client";
+import { FolderKanbanIcon, GithubIcon, HomeIcon, LinkedinIcon, MailIcon, MoonIcon, SunIcon, TelescopeIcon, TwitterIcon, UtensilsCrossedIcon } from "lucide-react";
 import Link from "next/link";
 
 const Header: React.FC = () => {
@@ -40,22 +39,26 @@ const Header: React.FC = () => {
       social: {
         github: {
           url: "",
+          label: "Github",
           icon: GithubIcon,
           navbar: true,
         },
         linkedin: {
           url: "",
+          label: "LinkedIn",
           icon: LinkedinIcon,
           navbar: true,
         },
         twitter: {
           url: "",
           icon: TwitterIcon,
+          label: "Twitter",
           navbar: true,
         },
         email: {
           url: "mailto:",
           icon: MailIcon,
+          label: 'Email',
           navbar: true,
         },
       },
@@ -78,7 +81,7 @@ const Header: React.FC = () => {
     }
   };
   return (
-    <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14">
+    <div className="pointer-events-none fixed inset-x-0 top-4 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14">
       <div className="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>
       <Dock className="z-50 pointer-events-auto relative mx-auto flex min-h-full h-full items-center px-1 bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] ">
         {DATA.navbar.map((item) => (
@@ -89,7 +92,7 @@ const Header: React.FC = () => {
                   href={item.href}
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12"
+                    "size-10"
                   )}
                 >
                   <item.icon className="size-4" />
@@ -112,14 +115,14 @@ const Header: React.FC = () => {
                     href={social.url}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12"
+                      "size-10"
                     )}
                   >
                     <social.icon className="size-4" />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{name}</p>
+                  <p>{social.label}</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>
@@ -132,16 +135,18 @@ const Header: React.FC = () => {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button
+                    variant="ghost"
                     className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12"
+                      "size-10 hover:bg-muted/50",
+                      "hover:text-foreground",
+                      "transition-colors duration-200"
                     )}
                   >
                     <theme.icon className="size-4" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{name}</p>
+                  <p>{theme.label}</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>

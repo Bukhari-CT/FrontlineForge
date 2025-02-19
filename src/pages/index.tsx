@@ -16,8 +16,7 @@ const geistMono = Geist_Mono({
 export default function Home() {
   return (
     <TooltipProvider delayDuration={0}>
-
-      <div><Dock children={<Header />} /></div>
+      <Dock children={<Header />} />
     </TooltipProvider>
   );
 }
