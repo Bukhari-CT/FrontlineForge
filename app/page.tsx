@@ -101,7 +101,7 @@ export default function Home() {
             <div className="h-8 w-8 bg-primary rounded-md flex items-center justify-center">
               <span className="text-white font-bold">YI</span>
             </div>
-            <span className="font-bold text-lg text-secondary dark:text-white">Your Name</span>
+            <span className="font-bold text-lg text-secondary dark:text-white">Faisal Bukhari</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -685,35 +685,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section ref={contactRef} className="py-20 bg-light dark:bg-dark-blue/10">
-        <div className="container">
-          <AnimatedSection animation={fadeIn}>
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold text-secondary dark:text-white mb-4">Let's Work Together</h2>
-              <p className="text-muted-foreground dark:text-gray-300">
-                Have a project in mind? Get in touch and let's bring your ideas to life.
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="max-w-md mx-auto">
-            <form className="space-y-4">
-              <Input type="text" placeholder="Your Name" />
-              <Input type="email" placeholder="Your Email" />
-              <Input type="text" placeholder="Subject" />
-              <Textarea placeholder="Your Message" rows={4} />
-              <Button
-                type="submit"
-                className="w-full bg-primary hover:bg-primary/90 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-              >
-                Send Message
-              </Button>
-            </form>
-          </div>
-        </div>
-      </section>
-
       {/* Experience and Education Section */}
       <section ref={experienceRef} className="py-20 bg-light dark:bg-dark-blue/10">
         <div className="container">
@@ -785,217 +756,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section (Updated with categories) */}
-      <section ref={projectsRef} className="py-20">
-        <div className="container">
-          <AnimatedSection animation={fadeIn}>
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold text-secondary dark:text-white mb-4">Featured Projects</h2>
-              <p className="text-muted-foreground dark:text-gray-300">A showcase of my best work in web development</p>
-            </div>
-          </AnimatedSection>
-
-          <Tabs defaultValue="all" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="all">All Projects</TabsTrigger>
-              <TabsTrigger value="company">Company Projects</TabsTrigger>
-              <TabsTrigger value="personal">Personal Projects</TabsTrigger>
-            </TabsList>
-            <TabsContent value="all">
-              <ProjectGrid projects={allProjects} />
-            </TabsContent>
-            <TabsContent value="company">
-              <ProjectGrid projects={companyProjects} />
-            </TabsContent>
-            <TabsContent value="personal">
-              <ProjectGrid projects={personalProjects} />
-            </TabsContent>
-          </Tabs>
-        </div>
-      </section>
-
-      {/* Development Process Section */}
-      <section ref={processRef} className="py-20">
-        <div className="container">
-          <AnimatedSection animation={fadeIn}>
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold text-secondary dark:text-white mb-4">My Development Process</h2>
-              <p className="text-muted-foreground dark:text-gray-300">
-                A structured approach to bringing your web ideas to life
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <AnimatedSection animation={slideInLeft}>
-              <div className="space-y-6">
-                {[
-                  {
-                    icon: <FileText className="h-5 w-5 text-primary" />,
-                    title: "1. Requirements Gathering",
-                    description: "Detailed discussion to understand your project needs and goals",
-                  },
-                  {
-                    icon: <Layout className="h-5 w-5 text-accent-purple" />,
-                    title: "2. Design & Prototyping",
-                    description: "Creating wireframes and interactive prototypes for your approval",
-                  },
-                  {
-                    icon: <Code className="h-5 w-5 text-accent-teal" />,
-                    title: "3. Development",
-                    description: "Coding the solution using Next.js, TypeScript, and Tailwind CSS",
-                  },
-                  {
-                    icon: <CheckCircle className="h-5 w-5 text-accent" />,
-                    title: "4. Testing & Deployment",
-                    description: "Rigorous testing and smooth deployment to your preferred platform",
-                  },
-                ].map((step, index) => (
-                  <div key={index} className="flex gap-4 items-start">
-                    <div className="h-10 w-10 rounded-full bg-light-blue dark:bg-dark-blue/30 flex items-center justify-center flex-shrink-0">
-                      {step.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1 dark:text-white">{step.title}</h3>
-                      <p className="text-sm text-muted-foreground dark:text-gray-400">{step.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection animation={slideInRight}>
-              <div className="relative">
-                <div className="absolute -z-10 bottom-0 right-0 h-64 w-64 rounded-full bg-accent/20 dark:bg-accent/10 blur-3xl"></div>
-                <Image
-                  src="/placeholder.svg?height=400&width=500"
-                  alt="Development Process"
-                  width={500}
-                  height={400}
-                  className="rounded-lg shadow-lg border border-gray-100 dark:border-dark-navy"
-                />
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications Section */}
-      <section ref={certificationsRef} className="py-20 bg-light dark:bg-dark-blue/10">
-        <div className="container">
-          <AnimatedSection animation={fadeIn}>
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold text-secondary dark:text-white mb-4">Certifications & Assessments</h2>
-              <p className="text-muted-foreground dark:text-gray-300">
-                Validating my skills through industry-recognized certifications
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "LinkedIn Skill Assessment 1",
-                issuer: "LinkedIn",
-                date: "2023",
-                icon: <Linkedin className="h-6 w-6 text-[#0077B5]" />,
-              },
-              {
-                title: "LinkedIn Skill Assessment 2",
-                issuer: "LinkedIn",
-                date: "2023",
-                icon: <Linkedin className="h-6 w-6 text-[#0077B5]" />,
-              },
-              {
-                title: "HackerRank Certification",
-                issuer: "HackerRank",
-                date: "2023",
-                icon: <Award className="h-6 w-6 text-[#2EC866]" />,
-              },
-            ].map((cert, index) => (
-              <AnimatedSection key={index} animation={fadeIn}>
-                <div className="bg-white dark:bg-dark-navy p-6 rounded-lg border border-gray-100 dark:border-dark-blue hover:shadow-md transition-shadow">
-                  <div className="flex items-center gap-4 mb-4">
-                    {cert.icon}
-                    <div>
-                      <h3 className="font-semibold text-lg dark:text-white">{cert.title}</h3>
-                      <p className="text-sm text-muted-foreground dark:text-gray-400">
-                        {cert.issuer} • {cert.date}
-                      </p>
-                    </div>
-                  </div>
-                  <Button variant="outline" className="w-full">
-                    View Certificate
-                  </Button>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* LinkedIn Posts Section */}
-      <section ref={postsRef} className="py-20">
-        <div className="container">
-          <AnimatedSection animation={fadeIn}>
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold text-secondary dark:text-white mb-4">LinkedIn Posts</h2>
-              <p className="text-muted-foreground dark:text-gray-300">
-                Sharing insights and experiences from my development journey
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Optimizing Next.js Performance",
-                excerpt: "Sharing my top tips for improving the performance of your Next.js applications...",
-                date: "Jun 15, 2023",
-                likes: 45,
-                comments: 12,
-              },
-              {
-                title: "TypeScript Best Practices",
-                excerpt: "Exploring some of the best practices I've learned while working with TypeScript...",
-                date: "May 22, 2023",
-                likes: 38,
-                comments: 8,
-              },
-              {
-                title: "Tailwind CSS Tips and Tricks",
-                excerpt: "Discover some lesser-known Tailwind CSS features that can supercharge your development...",
-                date: "Apr 10, 2023",
-                likes: 52,
-                comments: 15,
-              },
-            ].map((post, index) => (
-              <AnimatedSection key={index} animation={index % 2 === 0 ? slideInLeft : slideInRight}>
-                <div className="bg-white dark:bg-dark-navy rounded-lg overflow-hidden border border-gray-100 dark:border-dark-blue hover:shadow-md transition-shadow p-6">
-                  <h3 className="font-semibold text-lg mb-2 dark:text-white">{post.title}</h3>
-                  <p className="text-sm text-muted-foreground dark:text-gray-400 mb-4">{post.excerpt}</p>
-                  <div className="flex justify-between items-center text-sm text-muted-foreground dark:text-gray-400">
-                    <span>{post.date}</span>
-                    <div className="flex items-center gap-4">
-                      <span>{post.likes} likes</span>
-                      <span>{post.comments} comments</span>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-
-          <AnimatedSection animation={fadeIn}>
-            <div className="mt-10 text-center">
-              <Button className="bg-primary hover:bg-primary/90 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                View All Posts on LinkedIn
-              </Button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section ref={contactRef} className="py-20 bg-light dark:bg-dark-blue/10">
         <div className="container">
@@ -1034,7 +794,7 @@ export default function Home() {
                 <div className="h-8 w-8 bg-white rounded-md flex items-center justify-center">
                   <span className="text-primary font-bold">YI</span>
                 </div>
-                <span className="font-bold text-lg">Your Name</span>
+                <span className="font-bold text-lg">Faisal Bukhari</span>
               </div>
               <p className="text-gray-400 text-sm mb-4">
                 Full Stack Developer specializing in Next.js, TypeScript, and Tailwind CSS.
@@ -1115,7 +875,7 @@ export default function Home() {
           </div>
 
           <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">© 2023 Your Name. All rights reserved.</p>
+            <p className="text-gray-400 text-sm">©All rights reserved.</p>
             <div className="flex gap-4 mt-4 md:mt-0">
               <Link href="#" className="text-gray-400 hover:text-white text-sm">
                 Privacy Policy
