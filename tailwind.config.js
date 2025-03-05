@@ -1,44 +1,82 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./app/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    maxWidth: {
-      container: "1440px",
-      contentContainer: "1140px",
-      containerSmall: "1024px",
-      containerxs: "768px",
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
     },
     extend: {
-      screens: {
-        xs: "320px",
-        sm: "375px",
-        sml: "500px",
-        md: "667px",
-        mdl: "768px",
-        lg: "960px",
-        lgl: "1024px",
-        xl: "1280px",
-      },
       colors: {
-        bodyColor: "#f6ebf4",
-        textDarkBlue: "#482673",
-        textLight: "#4cbfa6",
-        textDark: "#023B59",
-        hoverColor: "rgba(100,255,218,0.1)",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "#255bf9",
+          foreground: "#ffffff",
+        },
+        secondary: {
+          DEFAULT: "#1c1c57",
+          foreground: "#ffffff",
+        },
+        accent: {
+          DEFAULT: "#8548da",
+          purple: "#ab29a1",
+          blue: "#255bf9",
+          teal: "#078d84",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "#f6f8ff",
+          foreground: "#8d8d8d",
+        },
+        light: {
+          DEFAULT: "#fdfdff",
+          blue: "#c9d6fe",
+          purple: "#dee6fe",
+        },
+        dark: {
+          DEFAULT: "#141b2b",
+          blue: "#1c1c57",
+          navy: "#3e3e70",
+        },
       },
-      fontFamily: {
-        Sevillana: ["Sevillana", "serif"],
-        bodyFont: ["Montserrat", "sans-serif"],
-        titleFont: ["Inter", "sans-serif"],
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
-      boxShadow: {
-        navbarShadow: " 0 10px 30px -10px rgba(2,12,27,0.7)",
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [require("tailwind-scrollbar")],
-};
+  plugins: [require("tailwindcss-animate")],
+}
+
