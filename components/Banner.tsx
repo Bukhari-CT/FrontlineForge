@@ -214,7 +214,7 @@ const Banner = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            HEY, I'M{" "}
+            HEY, I&apos;M{" "}
           </motion.span>
           <motion.span
             className="text-yellow inline-block"
