@@ -1,18 +1,58 @@
-@import url("https://fonts.googleapis.com/css2?family=Sevillana&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  * {
+    @apply border-gray-600;
+  }
+  body {
+    @apply bg-bodyColor text-textLight;
+  }
+}
+
 @layer components {
   .contactInput {
-    @apply w-full text-base text-white placeholder:text-textLight border border-b-[1px] border-transparent border-b-textDarkBlue py-3 px-2 outline-none focus-within:border-[1px] focus-within:border-textDarkBlue duration-100 bg-zinc-800;
+    @apply w-full text-base text-white placeholder:text-gray-400 border border-gray-600 py-3 px-4 outline-none focus:border-yellow duration-300 bg-darkGray rounded-lg;
+  }
+
+  .btn-primary {
+    @apply bg-yellow text-black px-6 py-3 rounded-lg font-medium hover:bg-yellow/90 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply border border-yellow text-yellow px-6 py-3 rounded-lg font-medium hover:bg-yellow hover:text-black transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-darkGray rounded-lg p-6 border border-gray-700 hover:border-yellow/50 transition-all duration-300;
   }
 }
 
 .scrollbarHide::-webkit-scrollbar {
   display: none;
 }
+
 .active {
-  color: #64ffda;
+  color: #ffd700;
+}
+
+/* Custom scrollbar */
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #282828;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #ffd700;
+  border-radius: 4px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #ffd700;
 }

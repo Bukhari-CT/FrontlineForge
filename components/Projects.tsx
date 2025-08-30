@@ -6,186 +6,161 @@ import {
   noorShop,
 } from "@/public/assets";
 import Image from "next/image";
-import { AiOutlineYoutube } from "react-icons/ai";
+import { motion } from "framer-motion";
 import { TbBrandGithub } from "react-icons/tb";
-import SectionTitle from "./SectionTitle";
 import { RxOpenInNewWindow } from "react-icons/rx";
 
 const Projects = () => {
+  const projects = [
+    {
+      id: 1,
+      title: "Charity Landing Page",
+      category: "DESIGN • DEVELOPMENT",
+      description:
+        "A modern charity website with donation functionality and volunteer registration system.",
+      image: cafezupas,
+      link: "https://cafezupas.com/",
+      github: "https://github.com/Bukhari-CT",
+    },
+    {
+      id: 2,
+      title: "Habit App Design",
+      category: "DESIGN",
+      description:
+        "Mobile app design for habit tracking with beautiful UI/UX and intuitive user flow.",
+      image: viralSolutions,
+      link: "https://viralsolutionsga.com/",
+      github: "https://github.com/Bukhari-CT",
+    },
+    {
+      id: 3,
+      title: "Interesting App",
+      category: "DEVELOPMENT",
+      description:
+        "Full-stack web application with real-time features and modern architecture.",
+      image: urgentcare,
+      link: "https://drivethruurgentcare.com/",
+      github: "https://github.com/Bukhari-CT",
+    },
+    {
+      id: 4,
+      title: "History Website",
+      category: "DEVELOPMENT",
+      description:
+        "Educational platform showcasing historical content with interactive timelines.",
+      image: noorShop,
+      link: "#",
+      github: "https://github.com/Bukhari-CT",
+    },
+    {
+      id: 5,
+      title: "Photography App",
+      category: "DESIGN",
+      description:
+        "Portfolio website for photographers with gallery management and booking system.",
+      image: amazonImg,
+      link: "#",
+      github: "https://github.com/Bukhari-CT",
+    },
+    {
+      id: 6,
+      title: "Electric Bike Landing Page",
+      category: "DESIGN • DEVELOPMENT",
+      description:
+        "E-commerce landing page for electric bikes with product showcase and ordering system.",
+      image: cafezupas,
+      link: "#",
+      github: "https://github.com/Bukhari-CT",
+    },
+  ];
+
   return (
-    <section id="project" className="max-w-container mx-auto lgl:px-20 py-24">
-      <SectionTitle title="Some Things I have Built" titleNo="03" />
-      {/* ============ project One Start here ================ */}
-      <div className="w-full flex flex-col items-center justify-center gap-28 mt-10">
-        <div className="flex flex-col xl:flex-row gap-6">
-          <a
-            className="w-full xl:w-1/2 h-auto relative group"
-            href="https://cafezupas.com/"
-            target="_blank"
-          >
-            <div>
-              <Image
-                className="w-full h-full object-contain"
-                src={cafezupas}
-                alt="cafezupas"
-              />
-              <div className="absolute w-full h-full bg-textDarkBlue/10 rounded-lg top-0 left-0 group-hover:bg-transparent duration-300"></div>
-            </div>
-          </a>
-          <div className="w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-end text-right xl:-ml-16 z-10">
-            <div>
-              <p className="font-titleFont text-textDarkBlue text-sm tracking-wide">
-                Featured Project
+    <section id="project" className="py-20 px-6">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            MY • PORTFOLIO
+          </h2>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
+              viewport={{ once: true }}
+              className="card group cursor-pointer"
+              whileHover={{
+                scale: 1.02,
+                y: -5,
+              }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+              </div>
+
+              <div className="mb-3">
+                <span className="text-yellow text-xs font-semibold uppercase tracking-wider">
+                  {project.category}
+                </span>
+              </div>
+
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow transition-colors duration-300">
+                {project.title}
+              </h3>
+
+              <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                {project.description}
               </p>
-              <h3 className="text-2xl font-bold">Cafezupas</h3>
-            </div>
-            <p className="bg-[#dfd9de] text-sm md:text-base p-2 md:p-6 rounded-md">
-              CafeZupas is sophisticated restaurant portal for menus, locations,
-              seamless online orders, and convenient{" "}
-              <span className="text-textDarkBlue">social media logins</span>.
-            </p>
-            <ul className="text-xs md:text-sm font-titleFont tracking-wide flex gap-2 md:gap-5 justify-between text-textDark">
-              <li>Nextjs</li>
-              <li>Typescript</li>
-              <li>Google Auth</li>
-              <li>Facebook Auth</li>
-              <li>Google Map</li>
-            </ul>
-            <div className="text-2xl flex gap-4">
-              <a
-                className="hover:text-textDarkBlue duration-300"
-                href="https://github.com/Bukhari-CT"
-                target="_blank"
-              >
-                <TbBrandGithub />
-              </a>
-              <a
-                className="hover:text-textDarkBlue duration-300"
-                href="https://cafezupas.com/"
-                target="_blank"
-              >
-                <RxOpenInNewWindow />
-              </a>
-            </div>
-          </div>
+
+              <div className="flex gap-4">
+                <motion.a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-yellow transition-colors duration-300"
+                  whileHover={{
+                    scale: 1.1,
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <TbBrandGithub className="text-xl" />
+                </motion.a>
+                <motion.a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-yellow transition-colors duration-300"
+                  whileHover={{
+                    scale: 1.1,
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <RxOpenInNewWindow className="text-xl" />
+                </motion.a>
+              </div>
+            </motion.div>
+          ))}
         </div>
-        {/* ============ project One End here ================== */}
-        {/* ============ project Two Start here ================ */}
-        <div className="flex flex-col xl:flex-row-reverse gap-6">
-          <a
-            className="w-full xl:w-1/2 h-auto relative group"
-            href="https://viralsolutionsga.com/"
-            target="_blank"
-          >
-            <div>
-              <Image
-                className="w-full h-full object-contain"
-                src={viralSolutions}
-                alt="viralSolutions"
-              />
-              <div className="absolute w-full h-full bg-textDarkBlue/10 rounded-lg top-0 left-0 group-hover:bg-transparent duration-300"></div>
-            </div>
-          </a>
-          <div className="w-full xl:w-1/2 flex flex-col gap-6 justify-between items-end text-right z-10">
-            <div>
-              <p className="font-titleFont text-textDarkBlue text-sm tracking-wide">
-                Featured Project
-              </p>
-              <h3 className="text-2xl font-bold">Viral Solutions</h3>
-            </div>
-            <p className="text-sm md:text-base bg-[#dfd9de] p-2 md:p-6 rounded-md xl:-mr-16">
-              Viral Solutions is a company that do Covid testings of and
-              generate there reports and provide their reports online to their
-              clients on their different portals website. Their users can login
-              to
-              <span className="text-textDarkBlue">
-                {" "}
-                Portals and get their results.
-              </span>
-            </p>
-            <ul className="text-xs md:text-sm font-titleFont tracking-wide flex gap-2 md:gap-5 justify-between text-textDark">
-              <li>React</li>
-              <li>Node</li>
-              <li>Typescript</li>
-              <li>React Forms</li>
-              <li>Ant Design</li>
-              <li>Less</li>
-            </ul>
-            <div className="text-2xl flex gap-4">
-              <a
-                className="hover:text-textDarkBlue duration-300"
-                href="https://github.com/Bukhari-CT"
-                target="_blank"
-              >
-                <TbBrandGithub />
-              </a>
-              <a
-                className="hover:text-textDarkBlue duration-300"
-                href="https://viralsolutionsga.com/"
-                target="_blank"
-              >
-                <RxOpenInNewWindow />
-              </a>
-            </div>
-          </div>
-        </div>
-        {/* ============ project Two End here ================== */}
-        {/* ============ project Three Start here ============== */}
-        <div className="flex flex-col xl:flex-row gap-6">
-          <a
-            className="w-full xl:w-1/2 h-auto relative group"
-            href="https://drivethruurgentcare.com/"
-            target="_blank"
-          >
-            <div>
-              <Image
-                className="w-full h-full object-contain"
-                src={urgentcare}
-                alt="urgentcare"
-              />
-              <div className="absolute w-full h-full bg-textDarkBlue/10 rounded-lg top-0 left-0 group-hover:bg-transparent duration-300"></div>
-            </div>
-          </a>
-          <div className="w-full xl:w-1/2 flex flex-col gap-6 justify-between items-end text-right xl:-ml-16 z-10">
-            <div>
-              <p className="font-titleFont text-textDarkBlue text-sm tracking-wide">
-                Featured Project
-              </p>
-              <h3 className="text-2xl font-bold">DriveThru Urgent Care</h3>
-            </div>
-            <p className="text-sm md:text-base bg-[#dfd9de] p-2 md:p-6 rounded-md">
-              DriveThru Urgent Care provides check-up facility on DriveThru
-              patients can book their schedule online through portal and can
-              visit the{" "}
-              <span className="text-textDarkBlue">DriveThru for check-up.</span>{" "}
-              Patient can check results from the portal{" "}
-            </p>
-            <ul className="text-xs md:text-sm font-titleFont tracking-wide flex gap-2 md:gap-5 justify-between text-textDark">
-              <li>React</li>
-              <li>Node</li>
-              <li>Ant Design</li>
-              <li>Less</li>
-              <li>SAML</li>
-            </ul>
-            <div className="text-2xl flex gap-4">
-              <a
-                className="hover:text-textDarkBlue duration-300"
-                href="https://github.com/Bukhari-CT"
-                target="_blank"
-              >
-                <TbBrandGithub />
-              </a>
-              <a
-                className="hover:text-textDarkBlue duration-300"
-                href="https://drivethruurgentcare.com/"
-                target="_blank"
-              >
-                <RxOpenInNewWindow />
-              </a>
-            </div>
-          </div>
-        </div>
-        {/* ============ project Three End here ================== */}
       </div>
     </section>
   );

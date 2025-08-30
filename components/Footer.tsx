@@ -1,36 +1,64 @@
-import { TbBrandGithub } from "react-icons/tb";
-import { SlSocialYoutube } from "react-icons/sl";
-import {
-  SlSocialLinkedin,
-  SlSocialFacebook,
-  SlSocialInstagram,
-} from "react-icons/sl";
-import { TbBrandFiverr, TbBrandUpwork } from "react-icons/tb";
+import { motion } from "framer-motion";
+import { SlSocialLinkedin, SlSocialInstagram } from "react-icons/sl";
+import { TbBrandGithub, TbBrandDribbble, TbBrandBehance } from "react-icons/tb";
 
 const Footer = () => {
+  const socialLinks = [
+    {
+      icon: SlSocialLinkedin,
+      href: "https://www.linkedin.com/in/faisal-bukhari-101/",
+      label: "LinkedIn",
+    },
+    { icon: TbBrandDribbble, href: "#", label: "Dribbble" },
+    { icon: TbBrandBehance, href: "#", label: "Behance" },
+    {
+      icon: TbBrandGithub,
+      href: "https://github.com/Bukhari-CT",
+      label: "GitHub",
+    },
+    { icon: SlSocialInstagram, href: "#", label: "Instagram" },
+  ];
+
   return (
-    <div className="hidden mdl:inline-flex xl:hidden items-center justify-center w-full py-6 gap-4">
-      <a href="https://github.com/Bukhari-CT" target="_blank">
-        <span className="w-10 h-10 text-xl bg-bodyColor border-[1px] border-zinc-700 hover:border-textDarkBlue text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textDarkBlue cursor-pointer hover:-translate-y-2 transition-all duration-300">
-          <TbBrandGithub />
-        </span>
-      </a>
-      <a href="https://www.linkedin.com/in/faisal-bukhari-101/" target="_blank">
-        <span className="w-10 h-10 text-xl bg-bodyColor border-[1px] border-zinc-700 hover:border-textDarkBlue text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textDarkBlue cursor-pointer hover:-translate-y-2 transition-all duration-300">
-          <SlSocialLinkedin />
-        </span>
-      </a>
-      <a href="https://www.fiverr.com/faisalbukhari" target="_blank">
-        <span className="w-10 h-10 text-xl bg-bodyColor border-[1px] border-zinc-700 hover:border-textDarkBlue text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textDarkBlue cursor-pointer hover:-translate-y-2 transition-all duration-300">
-          <TbBrandFiverr />
-        </span>
-      </a>
-      <a href="https://www.upwork.com/freelancers/faisalb21" target="_blank">
-        <span className="w-10 h-10 text-xl bg-bodyColor border-[1px] border-zinc-700 hover:border-textDarkBlue text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textDarkBlue cursor-pointer hover:-translate-y-2 transition-all duration-300">
-          <TbBrandUpwork />
-        </span>
-      </a>
-    </div>
+    <footer className="border-t border-gray-800 py-8 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* Copyright */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-gray-400 text-sm"
+        >
+          © 2025 Faisal Bukhari
+        </motion.div>
+
+        {/* Social Links */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex gap-4"
+        >
+          {socialLinks.map((social, index) => (
+            <motion.a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="w-10 h-10 bg-darkGray border border-gray-600 rounded-full flex items-center justify-center text-gray-400 hover:border-yellow hover:text-yellow transition-all duration-300 hover:scale-110"
+            >
+              <social.icon className="text-lg" />
+            </motion.a>
+          ))}
+        </motion.div>
+      </div>
+    </footer>
   );
 };
 

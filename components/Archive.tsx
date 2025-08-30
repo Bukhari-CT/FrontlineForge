@@ -1,10 +1,10 @@
 import { useState } from "react";
 import ArchiveCard from "./ArchiveCard";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Archive = () => {
   const [showMore, setShowMore] = useState(false);
-  const [moreProjects, setMoreProjects] = useState([
+  const [moreProjects] = useState([
     {
       id: 1,
       title: "Just Doing Solar",
@@ -62,7 +62,7 @@ const Archive = () => {
       technology: ["Wordpress", "Astra", "Salon booking system", "To Top"],
     },
   ]);
-  const [projects, setProjects] = useState([
+  const [projects] = useState([
     {
       id: 1,
       title: "Covid Test Report",
@@ -114,180 +114,100 @@ const Archive = () => {
   ]);
 
   return (
-    <div className="max-w-contentContainer mx-auto px-4 py-24">
-      <div className="w-full flex flex-col items-center">
-        <h2 className="text-3xl font-titleFont font-semibold">
-          Other Noteworthy Projects
-        </h2>
-        <p className="text-sm font-titleFont text-textDarkBlue">
-          view the archive
-        </p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-10 lgl:px-10">
-        {projects.map((project) => (
-          <ArchiveCard
-            key={project.id}
-            title={project.title}
-            des={project.description}
-            listItem={project.technology}
-            link={project.live}
-          />
-        ))}
-      </div>
-      {showMore && (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-10 lgl:px-10">
-          {moreProjects.map((project) => (
-            <ArchiveCard
+    <section className="py-20 px-6">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            OTHER • NOTEWORTHY PROJECTS
+          </h2>
+          <motion.p
+            className="text-yellow text-sm font-medium tracking-widest uppercase"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            view the archive
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {projects.map((project, index) => (
+            <motion.div
               key={project.id}
-              title={project.title}
-              des={project.description}
-              listItem={project.technology}
-              link={project.live}
-            />
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <ArchiveCard
+                title={project.title}
+                des={project.description}
+                listItem={project.technology}
+                link={project.live}
+              />
+            </motion.div>
           ))}
-        </div>
-      )}
-      {/* <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-10 lgl:px-10">
-        {showMore && (
-          <>
+        </motion.div>
+
+        <AnimatePresence>
+          {showMore && (
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.1 }}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"
             >
-              <ArchiveCard
-                title="OREBI e-commerce Shopping store"
-                des=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-            laudantium velit qui sint non, voluptates quo a veritatis."
-                listItem={["Reactjs", "Tailwind CSS", "getform.io"]}
-                link="https://orebishopping.reactbd.com/"
-              />
+              {moreProjects.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <ArchiveCard
+                    title={project.title}
+                    des={project.description}
+                    listItem={project.technology}
+                    link={project.live}
+                  />
+                </motion.div>
+              ))}
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-            >
-              <ArchiveCard
-                title="Noor Online Shopping Store"
-                des=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-            laudantium velit qui sint non, voluptates quo a veritatis."
-                listItem={["Reactjs", "Tailwind CSS", "redux-toolkit"]}
-                link="https://noorshop.netlify.app/"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-            >
-              <ArchiveCard
-                title="Personalized Blog"
-                des=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-            laudantium velit qui sint non, voluptates quo a veritatis."
-                listItem={["Nextjs", "Tailwind CSS", "next-auth", "firebase"]}
-                link="https://my-blog-delta-eight.vercel.app/"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-            >
-              <ArchiveCard
-                title="Shoppers Online Shopping Market"
-                des=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-            laudantium velit qui sint non, voluptates quo a veritatis."
-                listItem={["Nextjs", "react-slick", "redux-toolkit"]}
-                link="https://shoppersyt.vercel.app/"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              <ArchiveCard
-                title="Single Page Personalized Portfolio"
-                des=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-            laudantium velit qui sint non, voluptates quo a veritatis."
-                listItem={["Reactjs", "Tailwind CSS", "vercel deploy"]}
-                link="https://portfoliotwo.reactbd.com/"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-            >
-              <ArchiveCard
-                title="Nextjs Dynamic Portfolio"
-                des=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-            laudantium velit qui sint non, voluptates quo a veritatis."
-                listItem={["Reactjs", "Tailwind CSS", "vercel deploy"]}
-                link="https://portfoliothree.reactbd.com/"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-            >
-              <ArchiveCard
-                title="Bazaar - A Modern Shopping app"
-                des=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-            laudantium velit qui sint non, voluptates quo a veritatis."
-                listItem={["Reactjs", "Tailwind CSS", "vercel deploy"]}
-                link="https://bazar.reactbd.com/"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-            >
-              <ArchiveCard
-                title="Blog101 Application"
-                des=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-            laudantium velit qui sint non, voluptates quo a veritatis."
-                listItem={["Nextjs", "Tailwind CSS", "next-auth"]}
-                link="https://blog101.reactbd.com/"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.9 }}
-            >
-              <ArchiveCard
-                title="Todo application"
-                des=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-            laudantium velit qui sint non, voluptates quo a veritatis."
-                listItem={["Reactjs", "Tailwind CSS", "vercel deploy"]}
-                link="https://youtubetodo.vercel.app/"
-              />
-            </motion.div>
-          </>
-        )}
-      </div> */}
-      <div className="mt-12 flex items-center justify-center">
-        {showMore ? (
-          <button
-            onClick={() => setShowMore(false)}
-            className="w-36 h-12 rounded-md text-textDarkBlue text-[13px] border border-textDarkBlue hover:bg-hoverColor duration-300"
+          )}
+        </AnimatePresence>
+
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-12 flex items-center justify-center"
+        >
+          <motion.button
+            onClick={() => setShowMore(!showMore)}
+            className="btn-secondary"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            Show Less
-          </button>
-        ) : (
-          <button
-            onClick={() => setShowMore(true)}
-            className="w-36 h-12 rounded-md text-textDarkBlue text-[13px] border border-textDarkBlue hover:bg-hoverColor duration-300"
-          >
-            Show More
-          </button>
-        )}
+            {showMore ? "Show Less" : "Show More"}
+          </motion.button>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 
