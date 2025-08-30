@@ -62,7 +62,15 @@ const Skills = () => {
     { name: "Cloud Storage", icon: FaCloud, level: 80 },
   ];
 
-  const SkillCategory = ({ title, skills, delay = 0 }) => (
+  const SkillCategory = ({
+    title,
+    skills,
+    delay = 0,
+  }: {
+    title: string;
+    skills: any[];
+    delay?: number;
+  }) => (
     <motion.div
       initial={{ y: 30, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}

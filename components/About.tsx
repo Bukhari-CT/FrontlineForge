@@ -23,7 +23,7 @@ const About = () => {
 
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
-                Hello! I'm Faisal Bukhari, a{" "}
+                Hello! I&apos;m Faisal Bukhari, a{" "}
                 <span className="text-yellow">Full-Stack Developer</span> with
                 5+ years of experience building modern, scalable, and
                 high-performance web applications. I specialize in React,
