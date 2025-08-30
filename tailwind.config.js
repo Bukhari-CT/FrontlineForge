@@ -11,6 +11,8 @@ module.exports = {
       contentContainer: "1140px",
       containerSmall: "1024px",
       containerxs: "768px",
+      "7xl": "80rem",
+      "8xl": "88rem",
     },
     extend: {
       screens: {
@@ -24,11 +26,14 @@ module.exports = {
         xl: "1280px",
       },
       colors: {
-        bodyColor: "#f6ebf4",
-        textDarkBlue: "#482673",
-        textLight: "#4cbfa6",
-        textDark: "#023B59",
-        hoverColor: "rgba(100,255,218,0.1)",
+        bodyColor: "#1a1a1a",
+        textDarkBlue: "#FFD700",
+        textLight: "#ffffff",
+        textDark: "#e5e5e5",
+        hoverColor: "rgba(255,215,0,0.1)",
+        darkGray: "#282828",
+        lightGray: "#404040",
+        yellow: "#FFD700",
       },
       fontFamily: {
         Sevillana: ["Sevillana", "serif"],

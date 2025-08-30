@@ -1,93 +1,144 @@
 import { profileImg } from "@/public/assets";
 import Image from "next/image";
-import SectionTitle from "./SectionTitle";
-import { AiFillThunderbolt } from "react-icons/ai";
-import { useState } from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
-  const [skills] = useState<string[]>([
-    "Javascript",
-    "Typescript",
-    "Php",
-    "Wordpress",
-    "Reactjs",
-    "Nodejs",
-    "Nextjs",
-    "Expressjs",
-    "Antd",
-    "Material-Ui",
-    "TailwindCSS",
-    "Bootsrap",
-    "Less",
-    "Sass",
-  ]);
   return (
-    <section
-      id="about"
-      className="max-w-containerSmall mx-auto py-10 lgl:py-32 flex flex-col gap-8"
-    >
-      <SectionTitle title="About Me" titleNo="01" />
-      <div className="flex flex-col lgl:flex-row gap-16">
-        <div className="w-full lgl:w-2/3 text-base text-textDark font-medium flex flex-col gap-4">
-          <p>
-            Hello! I`m Faisal Bukhari, and I thrive on creating captivating
-            online experiences. As a
-            <span className="text-textDarkBlue">Full Stack Developer</span>, I
-            bring a holistic approach to web development, marrying both
-            front-end and back-end expertise. My journey in web development has
-            equipped me with a unique skill set, enabling me to take your
-            projects from concept to completion. With a focus on seamless user
-            experiences, I`ve optimized websites for various devices and
-            integrated efficient user sign-up processes.
-          </p>
-          <p>
-            In web development, I`ve tackled the intricacies of Webpack,
-            <span className="text-textDarkBlue">
-              {" "}
-              enhancing website performance and achieving faster loading times.
-            </span>{" "}
-            I`m adept at translating complex Figma designs into polished React
-            applications.
-          </p>
-          <p>
-            <span className="text-textDarkBlue">As a MERN Stack Developer</span>
-            , I`ve crafted responsive web applications, optimized performance,
-            and seamlessly integrated REST APIs. I`ve embraced modern front-end
-            tools and agile methodologies, working collaboratively. Fast-forward
-            to today, and I had the privilege of working at an advertising
-            agency, a start-up,{" "}
-          </p>
-          <p>
-            <span className="text-textDarkBlue">In WordPress</span>, I`ve honed
-            my skills, transforming ideas into functional websites. From custom
-            development to e-commerce solutions, I excel in incorporating
-            advanced features for improved functionality.
-          </p>
-          <p>Here are a few technologies I have been working with recently:</p>
-          <ul className="max-w-[450px] text-sm font-titleFont grid grid-cols-2 gap-2 mt-6">
-            {skills.map((skill, index) => (
-              <li key={index} className="flex items-center gap-2">
-                <span className="text-textDarkBlue">
-                  <AiFillThunderbolt />
-                </span>
-                {skill}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="w-full lgl:w-1/3 h-80 relative group">
-          <div className="absolute w-full h-80 -left-6 -top-6 rounded-full ">
-            <div className="w-full h-full relative z-20 flex pl-6 lgl:pl-0">
-              <Image
-                className="rounded-full h-full object-cover"
-                src={profileImg}
-                alt="profileImg"
-              />
-              <div className="hidden lgl:inline-block absolute w-full h-80 bg-textDarkBlue/20 rounded-full top-0 left-0 group-hover:bg-transparent duration-300"></div>
+    <section id="about" className="py-20 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left side - Content */}
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+              FAISAL • BUKHARI
+            </h2>
+            <p className="text-xl text-gray-300 font-semibold mb-8">
+              Full-Stack Developer specializing in modern web applications.
+            </p>
+
+            <div className="space-y-4 text-gray-300 leading-relaxed">
+              <p>
+                Hello! I'm Faisal Bukhari, a{" "}
+                <span className="text-yellow">Full-Stack Developer</span> with
+                5+ years of experience building modern, scalable, and
+                high-performance web applications. I specialize in React,
+                Next.js, Python FastAPI, and Node.js technologies.
+              </p>
+              <p>
+                From sleek user interfaces to robust backend systems, I help
+                businesses transform ideas into reliable digital products. My
+                expertise spans
+                <span className="text-yellow"> frontend development</span> with
+                React/Next.js,
+                <span className="text-yellow"> backend systems</span> with
+                Python FastAPI and Node.js, and{" "}
+                <span className="text-yellow"> cloud integration</span> with
+                modern deployment practices.
+              </p>
             </div>
-          </div>
-          <div className="hidden lgl:inline-flex w-full h-80 border-2 border-textDarkBlue rounded-full group-hover:-translate-x-2 group-hover:-translate-y-2 transition-transform duration-300"></div>
+
+            {/* Personal Details */}
+            <div className="grid grid-cols-3 gap-8 mt-12">
+              <div>
+                <h4 className="text-yellow text-sm font-semibold uppercase tracking-wider mb-2">
+                  LOCATION
+                </h4>
+                <p className="text-white">Pakistan</p>
+              </div>
+              <div>
+                <h4 className="text-yellow text-sm font-semibold uppercase tracking-wider mb-2">
+                  EXPERIENCE
+                </h4>
+                <p className="text-white">5+ Years Full-Stack</p>
+              </div>
+              <div>
+                <h4 className="text-yellow text-sm font-semibold uppercase tracking-wider mb-2">
+                  SPECIALIZATION
+                </h4>
+                <p className="text-white">React, Next.js, FastAPI</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right side - Image */}
+          <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="relative flex justify-center lg:justify-end"
+          >
+            <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+              <Image
+                src={profileImg}
+                alt="Faisal Bukhari"
+                fill
+                className="object-cover rounded-full border-4 border-yellow"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-full"></div>
+            </div>
+          </motion.div>
         </div>
+
+        {/* Stats Cards */}
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8 mt-20"
+        >
+          {[
+            { number: "5+", label: "YEARS OF EXPERIENCE" },
+            { number: "50+", label: "PROJECTS COMPLETED" },
+            { number: "30+", label: "HAPPY CLIENTS" },
+          ].map((stat, index) => (
+            <motion.div
+              key={index}
+              className="card text-center group cursor-pointer"
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{
+                scale: 1.02,
+                y: -5,
+              }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <motion.div
+                className="text-4xl font-bold text-yellow mb-2"
+                initial={{ scale: 0.8 }}
+                whileInView={{ scale: 1 }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.2 + index * 0.1,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                }}
+                viewport={{ once: true }}
+                whileHover={{
+                  scale: 1.05,
+                }}
+              >
+                {stat.number}
+              </motion.div>
+              <motion.div
+                className="text-gray-300 uppercase tracking-wider text-sm"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                {stat.label}
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
