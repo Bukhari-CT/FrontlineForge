@@ -124,16 +124,16 @@ const Experience = () => {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Company List */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="lg:col-span-1"
+            className="lg:col-span-1 order-2 lg:order-1"
           >
-            <div className="space-y-2">
+            <div className="space-y-2 lg:block flex flex-col gap-2 lg:pb-0">
               {experiences.map((experience, index) => (
                 <motion.button
                   key={experience.id}
@@ -144,8 +144,8 @@ const Experience = () => {
                   viewport={{ once: true }}
                   className={`w-full text-left p-4 rounded-lg transition-all duration-300 ${
                     selectedExperience.id === experience.id
-                      ? "bg-yellow text-black border-l-4 border-yellow"
-                      : "bg-darkGray text-white hover:bg-lightGray border-l-4 border-transparent hover:border-yellow/50"
+                      ? "bg-yellow text-black border-l-4 border-mint-400"
+                      : "bg-darkGray text-white hover:bg-lightGray border-l-4 border-transparent hover:border-mint-400/50"
                   }`}
                   whileHover={{
                     scale: 1.01,
@@ -155,7 +155,7 @@ const Experience = () => {
                   animate={{
                     backgroundColor:
                       selectedExperience.id === experience.id
-                        ? "#FFD700"
+                        ? "#4FD1C7"
                         : "#282828",
                     color:
                       selectedExperience.id === experience.id
@@ -163,7 +163,7 @@ const Experience = () => {
                         : "#FFFFFF",
                     borderLeftColor:
                       selectedExperience.id === experience.id
-                        ? "#FFD700"
+                        ? "#4FD1C7"
                         : "transparent",
                   }}
                 >
@@ -200,7 +200,7 @@ const Experience = () => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="lg:col-span-3"
+            className="lg:col-span-3 order-1 lg:order-2"
           >
             <AnimatePresence mode="wait">
               <motion.div
@@ -235,7 +235,7 @@ const Experience = () => {
                     transition={{ duration: 0.3, delay: 0.3 }}
                   >
                     <motion.span
-                      className="text-yellow font-semibold"
+                      className="text-mint-400 font-semibold"
                       whileHover={{ scale: 1.02 }}
                     >
                       {selectedExperience.company}
@@ -278,11 +278,11 @@ const Experience = () => {
                           className="flex items-start gap-3 text-gray-300"
                           whileHover={{
                             x: 2,
-                            color: "#FFD700",
+                            color: "#4FD1C7",
                           }}
                         >
                           <motion.span
-                            className="text-yellow mt-1"
+                            className="text-mint-400 mt-1"
                             initial={{ scale: 0.8 }}
                             animate={{ scale: 1 }}
                             transition={{
@@ -298,7 +298,7 @@ const Experience = () => {
                         </motion.li>
                       )
                     )}
-        </ul>
+                  </ul>
                 </motion.div>
               </motion.div>
             </AnimatePresence>

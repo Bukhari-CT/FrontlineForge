@@ -98,7 +98,7 @@ const Skills = () => {
           >
             <div className="flex flex-col items-center p-4">
               <motion.div
-                className="text-3xl text-yellow mb-3"
+                className="text-3xl text-mint-400 mb-3"
                 whileHover={{
                   scale: 1.2,
                   rotate: 360,

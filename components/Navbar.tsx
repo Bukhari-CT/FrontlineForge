@@ -68,7 +68,7 @@ const Navbar = () => {
         {/* Center - Navigation */}
         <div className="hidden md:flex items-center gap-8">
           <Link
-            className="text-white hover:text-yellow transition-colors duration-300 nav-link"
+            className="text-white hover:text-mint-400 transition-colors duration-300 nav-link"
             href="#home"
             onClick={handleScroll}
           >
@@ -81,7 +81,7 @@ const Navbar = () => {
             </motion.span>
           </Link>
           <Link
-            className="text-white hover:text-yellow transition-colors duration-300 nav-link"
+            className="text-white hover:text-mint-400 transition-colors duration-300 nav-link"
             href="#about"
             onClick={handleScroll}
           >
@@ -94,7 +94,7 @@ const Navbar = () => {
             </motion.span>
           </Link>
           <Link
-            className="text-white hover:text-yellow transition-colors duration-300 nav-link"
+            className="text-white hover:text-mint-400 transition-colors duration-300 nav-link"
             href="#project"
             onClick={handleScroll}
           >
@@ -107,7 +107,7 @@ const Navbar = () => {
             </motion.span>
           </Link>
           <Link
-            className="text-white hover:text-yellow transition-colors duration-300 nav-link"
+            className="text-white hover:text-mint-400 transition-colors duration-300 nav-link"
             href="#contact"
             onClick={handleScroll}
           >
@@ -157,12 +157,12 @@ const Navbar = () => {
             >
               <MdOutlineClose
                 onClick={() => setShow(false)}
-                className="text-3xl text-yellow cursor-pointer hover:text-red-500 absolute top-4 right-4"
+                className="text-3xl text-mint-400 cursor-pointer hover:text-red-500 absolute top-4 right-4"
               />
               <div className="flex flex-col items-center gap-7">
                 <ul className="flex flex-col text-base gap-7">
                   <Link
-                    className="text-white hover:text-yellow cursor-pointer duration-300 nav-link"
+                    className="text-white hover:text-mint-400 cursor-pointer duration-300 nav-link"
                     href="#home"
                     onClick={handleScroll}
                   >
@@ -175,7 +175,7 @@ const Navbar = () => {
                     </motion.li>
                   </Link>
                   <Link
-                    className="text-white hover:text-yellow cursor-pointer duration-300 nav-link"
+                    className="text-white hover:text-mint-400 cursor-pointer duration-300 nav-link"
                     href="#about"
                     onClick={handleScroll}
                   >
@@ -188,7 +188,7 @@ const Navbar = () => {
                     </motion.li>
                   </Link>
                   <Link
-                    className="text-white hover:text-yellow cursor-pointer duration-300 nav-link"
+                    className="text-white hover:text-mint-400 cursor-pointer duration-300 nav-link"
                     href="#project"
                     onClick={handleScroll}
                   >
@@ -201,7 +201,7 @@ const Navbar = () => {
                     </motion.li>
                   </Link>
                   <Link
-                    className="text-white hover:text-yellow cursor-pointer duration-300 nav-link"
+                    className="text-white hover:text-mint-400 cursor-pointer duration-300 nav-link"
                     href="#contact"
                     onClick={handleScroll}
                   >
@@ -223,7 +223,7 @@ const Navbar = () => {
                     href="https://github.com/Bukhari-CT"
                     target="_blank"
                   >
-                    <span className="w-10 h-10 text-xl bg-bodyColor border border-gray-600 hover:border-yellow text-white rounded-full inline-flex items-center justify-center hover:text-yellow cursor-pointer hover:-translate-y-2 transition-all duration-300">
+                    <span className="w-10 h-10 text-xl bg-bodyColor border border-gray-600 hover:border-yellow text-white rounded-full inline-flex items-center justify-center hover:text-mint-400 cursor-pointer hover:-translate-y-2 transition-all duration-300">
                       <TbBrandGithub />
                     </span>
                   </motion.a>
@@ -234,7 +234,7 @@ const Navbar = () => {
                     href="https://www.linkedin.com/in/faisal-bukhari-101/"
                     target="_blank"
                   >
-                    <span className="w-10 h-10 text-xl bg-bodyColor border border-gray-600 hover:border-yellow text-white rounded-full inline-flex items-center justify-center hover:text-yellow cursor-pointer hover:-translate-y-2 transition-all duration-300">
+                    <span className="w-10 h-10 text-xl bg-bodyColor border border-gray-600 hover:border-yellow text-white rounded-full inline-flex items-center justify-center hover:text-mint-400 cursor-pointer hover:-translate-y-2 transition-all duration-300">
                       <SlSocialLinkedin />
                     </span>
                   </motion.a>
@@ -245,7 +245,7 @@ const Navbar = () => {
                     href="https://www.fiverr.com/faisalbukhari"
                     target="_blank"
                   >
-                    <span className="w-10 h-10 text-xl bg-bodyColor border border-gray-600 hover:border-yellow text-white rounded-full inline-flex items-center justify-center hover:text-yellow cursor-pointer hover:-translate-y-2 transition-all duration-300">
+                    <span className="w-10 h-10 text-xl bg-bodyColor border border-gray-600 hover:border-yellow text-white rounded-full inline-flex items-center justify-center hover:text-mint-400 cursor-pointer hover:-translate-y-2 transition-all duration-300">
                       <TbBrandFiverr />
                     </span>
                   </motion.a>
@@ -256,7 +256,7 @@ const Navbar = () => {
                     href="https://www.upwork.com/freelancers/faisalb21"
                     target="_blank"
                   >
-                    <span className="w-10 h-10 text-xl bg-bodyColor border border-gray-600 hover:border-yellow text-white rounded-full inline-flex items-center justify-center hover:text-yellow cursor-pointer hover:-translate-y-2 transition-all duration-300">
+                    <span className="w-10 h-10 text-xl bg-bodyColor border border-gray-600 hover:border-yellow text-white rounded-full inline-flex items-center justify-center hover:text-mint-400 cursor-pointer hover:-translate-y-2 transition-all duration-300">
                       <TbBrandUpwork />
                     </span>
                   </motion.a>
@@ -267,7 +267,7 @@ const Navbar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2, ease: "easeIn" }}
-                className="text-sm w-72 tracking-widest text-yellow text-center mt-4"
+                className="text-sm w-72 tracking-widest text-mint-400 text-center mt-4"
                 href="mailto:faisalbukhari111@gmail.com"
               >
                 <p>faisalbukhari111@gmail.com</p>

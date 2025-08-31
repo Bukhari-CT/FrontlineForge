@@ -82,11 +82,11 @@ const Services = () => {
                     }}
                     viewport={{ once: true }}
                   >
-                    <service.icon className="text-2xl text-yellow" />
+                    <service.icon className="text-2xl text-mint-400" />
                   </motion.div>
                 </motion.div>
                 <motion.span
-                  className="text-4xl font-bold text-yellow/20 group-hover:text-yellow/40 transition-colors duration-300"
+                  className="text-4xl font-bold text-mint-400/20 group-hover:text-mint-400/40 transition-colors duration-300"
                   initial={{ scale: 0.8, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   transition={{

@@ -45,7 +45,7 @@ const Banner = () => {
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating Circles */}
         <motion.div
-          className="absolute top-20 left-10 w-20 h-20 border border-yellow/20 rounded-full"
+          className="absolute top-20 left-10 w-20 h-20 border border-mint-400/20 rounded-full"
           animate={{
             scale: [1, 1.1, 1],
           }}
@@ -56,7 +56,7 @@ const Banner = () => {
           }}
         />
         <motion.div
-          className="absolute top-40 right-20 w-16 h-16 border border-yellow/30 rounded-full"
+          className="absolute top-40 right-20 w-16 h-16 border border-mint-400/30 rounded-full"
           animate={{
             scale: [1.1, 1, 1.1],
           }}
@@ -68,7 +68,7 @@ const Banner = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-40 left-20 w-12 h-12 border border-yellow/25 rounded-full"
+          className="absolute bottom-40 left-20 w-12 h-12 border border-mint-400/25 rounded-full"
           animate={{
             scale: [1, 1.2, 1],
           }}
@@ -197,7 +197,7 @@ const Banner = () => {
       >
         <motion.div variants={itemVariants} className="mb-6">
           <motion.span
-            className="text-yellow text-sm font-medium tracking-widest uppercase inline-block"
+            className="text-mint-400 text-sm font-medium tracking-widest uppercase inline-block"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
@@ -217,7 +217,7 @@ const Banner = () => {
             HEY, I&apos;M{" "}
           </motion.span>
           <motion.span
-            className="text-yellow inline-block"
+            className="text-mint-400 inline-block"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -287,9 +287,9 @@ const Banner = () => {
             >
               Scroll Down
             </motion.span>
-            <motion.div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center group-hover:border-yellow transition-colors duration-300">
+            <motion.div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center group-hover:border-mint-400 transition-colors duration-300">
               <motion.div
-                className="w-1 h-3 bg-gray-400 rounded-full mt-2 group-hover:bg-yellow transition-colors duration-300"
+                className="w-1 h-3 bg-gray-400 rounded-full mt-2 group-hover:bg-mint-400 transition-colors duration-300"
                 animate={{
                   y: [0, 12, 0],
                 }}

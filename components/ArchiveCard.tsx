@@ -1,42 +1,35 @@
 import { motion } from "framer-motion";
 import { FaRegFolder } from "react-icons/fa";
-import { RxOpenInNewWindow } from "react-icons/rx";
 
 interface Props {
   title: string;
   des: string;
   listItem: string[];
   link: string;
+  onClick?: () => void;
 }
 
-const ArchiveCard = ({ title, des, listItem, link }: Props) => {
+const ArchiveCard = ({ title, des, listItem, link, onClick }: Props) => {
   return (
-    <motion.a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.div
+      onClick={onClick}
       whileHover={{ y: -10 }}
       whileTap={{ scale: 0.95 }}
+      className="cursor-pointer"
     >
       <div className="card group cursor-pointer h-80 p-7 flex flex-col justify-between">
-        <div className="flex justify-between items-start mb-6">
+        <div className="flex justify-start items-start mb-6">
           <motion.div
             whileHover={{ rotate: 15, scale: 1.1 }}
             transition={{ duration: 0.3 }}
           >
-            <FaRegFolder className="text-4xl text-yellow" />
-          </motion.div>
-          <motion.div
-            whileHover={{ rotate: 45, scale: 1.2 }}
-            transition={{ duration: 0.3 }}
-          >
-            <RxOpenInNewWindow className="text-2xl text-gray-400 group-hover:text-yellow transition-colors duration-300" />
+            <FaRegFolder className="text-4xl text-mint-400" />
           </motion.div>
         </div>
 
         <div className="flex-1">
           <motion.h2
-            className="text-xl font-bold text-white mb-3 group-hover:text-yellow transition-colors duration-300"
+            className="text-xl font-bold text-white mb-3 group-hover:text-mint-400 transition-colors duration-300"
             whileHover={{ scale: 1.02 }}
           >
             {title}
@@ -60,7 +53,7 @@ const ArchiveCard = ({ title, des, listItem, link }: Props) => {
           {listItem.map((item, i) => (
             <motion.li
               key={i}
-              className="text-xs text-gray-400 bg-darkGray px-2 py-1 rounded border border-gray-600 group-hover:border-yellow group-hover:text-yellow transition-colors duration-300"
+              className="text-xs text-gray-400 bg-darkGray px-2 py-1 rounded border border-gray-600 group-hover:border-mint-400 group-hover:text-mint-400 transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
@@ -69,7 +62,7 @@ const ArchiveCard = ({ title, des, listItem, link }: Props) => {
           ))}
         </motion.ul>
       </div>
-    </motion.a>
+    </motion.div>
   );
 };
 

@@ -1,10 +1,12 @@
 import About from "@/components/About";
 import Banner from "@/components/Banner";
+import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import LeftSide from "@/components/LeftSide";
 import LoadingScreen from "@/components/LoadingScreen";
+import Meeting from "@/components/Meeting";
 import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import RightSide from "@/components/RightSide";
@@ -42,10 +44,12 @@ export default function Home() {
             <Banner />
             <About />
             <Skills />
+            <Certifications />
             <Experience />
             <Services />
             <Projects />
             <Archive />
+            <Meeting />
             <Contact />
             <Footer />
           </div>
