@@ -15,19 +15,27 @@
 
 @layer components {
   .contactInput {
-    @apply w-full text-base text-white placeholder:text-gray-400 border border-gray-600 py-3 px-4 outline-none focus:border-yellow duration-300 bg-darkGray rounded-lg;
+    @apply w-full text-base text-white placeholder:text-gray-400 border border-gray-600 py-3 px-4 outline-none focus:border-mint-400 duration-300 bg-darkGray rounded-lg transition-all;
+  }
+
+  .contactInput:focus {
+    @apply shadow-lg shadow-mint-400/20;
+  }
+
+  .contactInput select {
+    @apply bg-darkGray text-white;
   }
 
   .btn-primary {
-    @apply bg-yellow text-black px-6 py-3 rounded-lg font-medium hover:bg-yellow/90 transition-all duration-300;
+    @apply bg-mint-400 text-black px-6 py-3 rounded-lg font-medium hover:bg-mint-300 transition-all duration-300;
   }
 
   .btn-secondary {
-    @apply border border-yellow text-yellow px-6 py-3 rounded-lg font-medium hover:bg-yellow hover:text-black transition-all duration-300;
+    @apply border border-mint-400 text-mint-400 px-6 py-3 rounded-lg font-medium hover:bg-mint-400 hover:text-black transition-all duration-300;
   }
 
   .card {
-    @apply bg-darkGray rounded-lg p-6 border border-gray-700 hover:border-yellow/50 transition-all duration-300;
+    @apply bg-darkGray rounded-lg p-6 border border-gray-700 hover:border-mint-400/50 transition-all duration-300;
   }
 }
 
@@ -36,7 +44,7 @@
 }
 
 .active {
-  color: #ffd700;
+  color: #4fd1c7;
 }
 
 /* Custom scrollbar */
@@ -45,14 +53,14 @@
 }
 
 .scrollbar::-webkit-scrollbar-track {
-  background: #282828;
+  background: #1a1a1a;
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
-  background: #ffd700;
+  background: #4fd1c7;
   border-radius: 4px;
 }
 
 .scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #ffd700;
+  background: #2dd4bf;
 }

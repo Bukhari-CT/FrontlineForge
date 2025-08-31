@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section id="about" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left side - Content */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
@@ -24,7 +24,7 @@ const About = () => {
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 Hello! I&apos;m Faisal Bukhari, a{" "}
-                <span className="text-yellow">Full-Stack Developer</span> with
+                <span className="text-mint-400">Full-Stack Developer</span> with
                 5+ years of experience building modern, scalable, and
                 high-performance web applications. I specialize in React,
                 Next.js, Python FastAPI, and Node.js technologies.
@@ -33,31 +33,34 @@ const About = () => {
                 From sleek user interfaces to robust backend systems, I help
                 businesses transform ideas into reliable digital products. My
                 expertise spans
-                <span className="text-yellow"> frontend development</span> with
-                React/Next.js,
-                <span className="text-yellow"> backend systems</span> with
+                <span className="text-mint-400">
+                  {" "}
+                  frontend development
+                </span>{" "}
+                with React/Next.js,
+                <span className="text-mint-400"> backend systems</span> with
                 Python FastAPI and Node.js, and{" "}
-                <span className="text-yellow"> cloud integration</span> with
+                <span className="text-mint-400"> cloud integration</span> with
                 modern deployment practices.
               </p>
             </div>
 
             {/* Personal Details */}
-            <div className="grid grid-cols-3 gap-8 mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-12">
               <div>
-                <h4 className="text-yellow text-sm font-semibold uppercase tracking-wider mb-2">
+                <h4 className="text-mint-400 text-sm font-semibold uppercase tracking-wider mb-2">
                   LOCATION
                 </h4>
                 <p className="text-white">Pakistan</p>
               </div>
               <div>
-                <h4 className="text-yellow text-sm font-semibold uppercase tracking-wider mb-2">
+                <h4 className="text-mint-400 text-sm font-semibold uppercase tracking-wider mb-2">
                   EXPERIENCE
                 </h4>
                 <p className="text-white">5+ Years Full-Stack</p>
               </div>
               <div>
-                <h4 className="text-yellow text-sm font-semibold uppercase tracking-wider mb-2">
+                <h4 className="text-mint-400 text-sm font-semibold uppercase tracking-wider mb-2">
                   SPECIALIZATION
                 </h4>
                 <p className="text-white">React, Next.js, FastAPI</p>
