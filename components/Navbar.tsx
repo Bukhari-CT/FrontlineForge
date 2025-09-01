@@ -231,14 +231,14 @@ const Navbar = () => {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.9, ease: "easeIn" }}
-                    href="https://www.linkedin.com/in/faisal-bukhari-101/"
+                    href="https://www.linkedin.com/in/shah-faisal-bukhari/"
                     target="_blank"
                   >
                     <span className="w-10 h-10 text-xl bg-bodyColor border border-gray-600 hover:border-yellow text-white rounded-full inline-flex items-center justify-center hover:text-mint-400 cursor-pointer hover:-translate-y-2 transition-all duration-300">
                       <SlSocialLinkedin />
                     </span>
                   </motion.a>
-                  <motion.a
+                  {/* <motion.a
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.95, ease: "easeIn" }}
@@ -248,7 +248,7 @@ const Navbar = () => {
                     <span className="w-10 h-10 text-xl bg-bodyColor border border-gray-600 hover:border-yellow text-white rounded-full inline-flex items-center justify-center hover:text-mint-400 cursor-pointer hover:-translate-y-2 transition-all duration-300">
                       <TbBrandFiverr />
                     </span>
-                  </motion.a>
+                  </motion.a> */}
                   <motion.a
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}

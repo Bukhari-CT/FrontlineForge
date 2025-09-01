@@ -237,9 +237,9 @@ const Banner = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            A CREATIVE DEVELOPER
+            FULL-STACK DEVELOPER
           </motion.span>
-        </motion.h1>
+      </motion.h1>
 
         <motion.div variants={itemVariants} className="mb-8">
           <motion.span
@@ -248,7 +248,7 @@ const Banner = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.0 }}
           >
-            DESIGN • DEVELOPMENT • WEBFLOW
+            FRONTEND • BACKEND • FULL-STACK
           </motion.span>
         </motion.div>
 

@@ -75,11 +75,9 @@ const Contact = () => {
   const socialLinks = [
     {
       icon: SlSocialLinkedin,
-      href: "https://www.linkedin.com/in/faisal-bukhari-101/",
+      href: "https://www.linkedin.com/in/shah-faisal-bukhari/",
       label: "LinkedIn",
     },
-    { icon: TbBrandDribbble, href: "#", label: "Dribbble" },
-    { icon: TbBrandBehance, href: "#", label: "Behance" },
     {
       icon: TbBrandGithub,
       href: "https://github.com/Bukhari-CT",
