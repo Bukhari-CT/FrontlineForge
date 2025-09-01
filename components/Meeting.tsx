@@ -18,11 +18,11 @@ const Meeting = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
-            LET'S • MEET
+            LET&apos;S • MEET{" "}
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Ready to discuss your project? Book a free consultation call and
-            let's bring your ideas to life.
+            let&apos;s bring your ideas to life.{" "}
           </p>
         </motion.div>
 
@@ -108,7 +108,7 @@ const Meeting = () => {
               className="bg-darkGray p-6 rounded-lg border border-gray-700"
             >
               <h4 className="text-white text-lg font-semibold mb-3">
-                What we'll discuss:
+                What we&apos;ll discuss:
               </h4>
               <ul className="space-y-2 text-gray-400">
                 <li className="flex items-center gap-2">

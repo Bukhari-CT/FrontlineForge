@@ -239,7 +239,7 @@ const Banner = () => {
           >
             FULL-STACK DEVELOPER
           </motion.span>
-      </motion.h1>
+        </motion.h1>
 
         <motion.div variants={itemVariants} className="mb-8">
           <motion.span

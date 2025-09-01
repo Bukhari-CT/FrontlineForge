@@ -180,11 +180,11 @@ const Contact = () => {
               {/* Header */}
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-white mb-2">
-                  Let's Work Together
+                  Let&apos;s Work Together{" "}
                 </h3>
                 <p className="text-gray-400 text-sm">
-                  Have a project in mind? Need a quote? Just want to chat? I'd
-                  love to hear from you!
+                  Have a project in mind? Need a quote? Just want to chat?
+                  I&apos;d love to hear from you!
                 </p>
               </div>
 
@@ -294,7 +294,7 @@ const Contact = () => {
                     <option value="2-3-months">2-3 months</option>
                     <option value="3-6-months">3-6 months</option>
                     <option value="6-plus-months">6+ months</option>
-                    <option value="flexible">I'm flexible</option>
+                    <option value="flexible">I&apos;m flexible</option>
                     <option value="other">Other</option>
                   </select>
 

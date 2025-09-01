@@ -10,11 +10,26 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import ProjectModal from "./ProjectModal";
 
+interface Project {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  image: any; // or StaticImageData if you want to be more specific
+  link: string;
+  github?: string;
+  technologies?: string[];
+  features?: string[];
+  longDescription?: string;
+  challenges?: string[];
+  results?: string[];
+}
+
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleProjectClick = (project) => {
+  const handleProjectClick = (project: Project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
   };
